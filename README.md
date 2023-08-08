@@ -29,6 +29,8 @@ Install dependencies
 
 Start the server
 
+### before start server you have to put github access token in .env file as name "VITE_GITHUB_TOKEN"
+
 ```bash
   yarn dev
 ```

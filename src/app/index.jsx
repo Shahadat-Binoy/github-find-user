@@ -10,7 +10,7 @@ const App = () => {
   const [userProfile, setUserProfile] = useState(null);
   const [repositories, setRepositories] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
+  const [error, setError] = useState("");
   const changeHandler = (e) => {
     setInput(e.target.value);
   };
@@ -29,6 +29,7 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         setUserProfile(data);
+        setError("");
         setLoading(false);
         if (data.message) {
           setError(data.message);
@@ -53,6 +54,7 @@ const App = () => {
   };
   useEffect(() => {
     if (!userProfile?.login) {
+      setRepositories(null);
       return;
     }
     getAllRepo();
