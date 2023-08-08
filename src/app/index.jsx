@@ -33,12 +33,13 @@ const App = () => {
         setLoading(false);
         if (data.message) {
           setError(data.message);
+          setUserProfile(null);
+          setRepositories(null);
         }
       })
-      .catch((error) => {
+      .catch(() => {
         setLoading(false);
         setError(true);
-        console.log(error.message);
       });
   };
 
@@ -51,6 +52,11 @@ const App = () => {
     })
       .then((response) => response.json())
       .then((data) => setRepositories(data));
+  };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter" && !!input) {
+      searchHandler();
+    }
   };
   useEffect(() => {
     if (!userProfile?.login) {
@@ -68,6 +74,7 @@ const App = () => {
         searchHandler={searchHandler}
         loading={loading}
         error={error}
+        onKeyPress={handleKeyPress}
       />
       {userProfile?.login && (
         <section>
