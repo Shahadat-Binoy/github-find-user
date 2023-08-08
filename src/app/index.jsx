@@ -3,8 +3,7 @@ import InputText from "../components/InputText";
 import Card from "../components/Card";
 import checkInput from "../utils/checkInput";
 
-const TOKEN =
-  "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";
+const TOKEN = "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";
 
 const App = () => {
   const [input, setInput] = useState("");
