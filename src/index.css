@@ -1,69 +1,189 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  color: white;
+  overflow-x: hidden;
 }
 
+/* designing input&button container */
+.inputbox-button {
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* designing heading  */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 20px 0;
+  color: black;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* designing input-box  */
+input {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: black;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-right: 5px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* designing button  */
+#data-btn {
+  background-color: #1010c4;
+  color: white;
+  padding: 10px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 9px;
+}
+
+/* designing button hover  */
+#data-btn:hover {
+  background-color: #101082;
+  padding: 10px 33px;
+}
+#data-btn:disabled {
+  background-color: #333;
+  padding: 10px 33px;
+  cursor: not-allowed;
+}
+
+/* all info about repo container */
+.container {
+  background-color: #00008b;
+}
+
+/* image box desiging  */
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+/* image desiging  */
+#img {
+  border-radius: 80px;
+}
+
+/* info container desiging  */
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+/* profile info design which takes lable and info  */
+.profile-info {
+  display: flex;
+  background-color: #5959ff;
+  margin: 10px 20px;
+  padding: 20px 10px;
+  font-size: 23px;
+}
+
+/* label desiging  */
+label {
+  padding: 0 25px;
+}
+
+/* designing grid container  */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* margin: 50px 0; */
+  background-color: #00008b;
+}
+
+/* desiging repository info */
+.repository {
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid white;
+  margin: 25px;
+}
+
+/* designing repository heading  */
+.repository h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* designing repository paragraph */
+.repository p {
+  font-size: 14px;
+  color: #f20c1f;
+  margin: 10px 0;
+  font-weight: 700;
+}
+
+/* designing repository link  */
+.repository a {
+  color: aqua;
+  text-decoration: none;
+  margin: 5px 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+/* designing repository link hover */
+.repository a:hover {
+  text-decoration: underline;
+}
+
+/* add media Queries  */
+@media screen and (max-width: 550px) {
+  input {
+    padding: 8px 10px;
   }
-  a:hover {
-    color: #747bff;
+
+  .inputbox-button {
+    padding: 16px;
   }
-  button {
-    background-color: #f9f9f9;
+
+  #data-btn {
+    padding: 10px 40px;
+  }
+
+  #img {
+    height: 300px;
+  }
+
+  .image {
+    height: 400px;
+  }
+
+  .profile-info {
+    margin: 5px;
+    padding: 10px 5px;
+    font-size: 16px;
+  }
+
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .repository {
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 325px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    margin: 40px 5px;
+  }
+
+  #img {
+    height: 200px;
+  }
+
+  .image {
+    height: 300px;
   }
 }
