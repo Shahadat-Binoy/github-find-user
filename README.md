@@ -1,8 +1,34 @@
-# React + Vite
+# Github User Finder & Repo Downloader
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Here, anybody can find github user by link or user name.
+User also can download github repositories as ZIP.
 
-Currently, two official plugins are available:
+## Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://git-repo-downloader.netlify.app/
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/sarker25/github-find-user
+```
+
+Go to the project directory
+
+```bash
+  cd github-find-user
+```
+
+Install dependencies
+
+```bash
+  yarn
+```
+
+Start the server
+
+```bash
+  yarn dev
+```

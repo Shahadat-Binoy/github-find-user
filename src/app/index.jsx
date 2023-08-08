@@ -3,7 +3,7 @@ import InputText from "../components/InputText";
 import Card from "../components/Card";
 import checkInput from "../utils/checkInput";
 
-const TOKEN = "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";
+const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -70,9 +70,12 @@ const App = () => {
       {userProfile?.login && (
         <section>
           <div className="container" id="container">
-            <div className="image">
-              <img src={userProfile?.avatar_url} alt="image" id="img" />
-            </div>
+            {userProfile?.avatar_url && (
+              <div className="image">
+                <img src={userProfile?.avatar_url} alt="image" id="img" />
+              </div>
+            )}
+
             <div className="info">
               <div className="profile-info">
                 <label>Name:</label>
