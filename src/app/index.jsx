@@ -32,12 +32,13 @@ const App = () => {
         setLoading(false);
         if (data.message) {
           setError(data.message);
+          setUserProfile(null);
+          setRepositories(null);
         }
       })
-      .catch((error) => {
+      .catch(() => {
         setLoading(false);
         setError(true);
-        console.log(error.message);
       });
   };
 
