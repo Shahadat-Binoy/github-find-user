@@ -7,6 +7,7 @@ const InputText = ({
   searchHandler,
   error,
   loading,
+  onKeyPress,
 }) => {
   return (
     <div className="inputbox-button">
@@ -16,6 +17,7 @@ const InputText = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onKeyDown={onKeyPress}
       />
       <button id="data-btn" onClick={searchHandler} disabled={loading}>
         Search

@@ -52,6 +52,11 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   };
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter" && !!input) {
+      searchHandler();
+    }
+  };
   useEffect(() => {
     if (!userProfile?.login) {
       return;
@@ -67,6 +72,7 @@ const App = () => {
         searchHandler={searchHandler}
         loading={loading}
         error={error}
+        onKeyPress={handleKeyPress}
       />
       {userProfile?.login && (
         <section>
